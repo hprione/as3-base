@@ -8,8 +8,6 @@ package com.hprione.net
 	import flash.net.URLVariables;
 	
 	/**
-	 * Form
-	 * 
 	 * @author hprione
 	 * @since 19/04/2011
 	 */
@@ -24,40 +22,53 @@ package com.hprione.net
 		
 		public function Form(url:String, method:String = "POST")
 		{
-			this.request = new URLRequest(url);
-			this.request.method = method;
-			this.request.data = new URLVariables();
+			request = new URLRequest(url);
+			request.method = method;
 		}
 		
 		public function addParameter(parameter:String, value:String):void
 		{
+			if (!request.data) {
+				request.data = new URLVariables();
+			}
+			
 			request.data[parameter] = value;
 		}
 		
 		public function load():void
 		{
 			loader = new URLLoader();
-			loader.addEventListener(Event.COMPLETE, onLoaderCompleteHandler);
-			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoaderErrorHandler);
+			loader.addEventListener(Event.COMPLETE, onLoaderCompleteEventHandler);
+			loader.addEventListener(IOErrorEvent.IO_ERROR, onLoaderIOErrorEventHandler);
 			loader.load(request);
+		}
+		
+		public function close():void 
+		{
+			try {
+				loader.close();
+			} catch (e:Error) {
+				trace(e.message);
+			}
 		}
 		
 		public function unload():void 
 		{
-			loader.removeEventListener(Event.COMPLETE, onLoaderCompleteHandler);
-			loader.removeEventListener(IOErrorEvent.IO_ERROR, onLoaderErrorHandler);
+			close();
+			
+			loader.removeEventListener(Event.COMPLETE, onLoaderCompleteEventHandler);
+			loader.removeEventListener(IOErrorEvent.IO_ERROR, onLoaderIOErrorEventHandler);
 			loader = null;
 		}
 		
-		private function onLoaderErrorHandler(e:IOErrorEvent):void 
+		private function onLoaderIOErrorEventHandler(e:IOErrorEvent):void 
 		{
 			dispatchEvent(e);
 		}
 		
-		private function onLoaderCompleteHandler(e:Event):void 
+		private function onLoaderCompleteEventHandler(e:Event):void 
 		{
 			_response = String(loader.data);
-			
 			dispatchEvent(new Event(Event.COMPLETE));
 		}
 		
