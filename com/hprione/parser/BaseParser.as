@@ -1,4 +1,4 @@
-package com.hprione.parser
+﻿package com.hprione.parser
 {
 	import com.hprione.net.Form;
 	import com.hprione.parser.ParserEvents;
@@ -28,11 +28,6 @@ package com.hprione.parser
 		public function addParameter(parameter:String, value:String):void
 		{
 			form.addParameter(parameter, value);
-		}
-		
-		public function addParameters(parameters:URLVariables):void
-		{
-			form.addParameters(parameters);
 		}
 		
 		public function load():void
