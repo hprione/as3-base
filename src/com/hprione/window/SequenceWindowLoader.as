@@ -33,9 +33,9 @@
 			removeAll ();
 		}
 		
-		override protected function showWindow ():void
+		override protected function loadNextWindow():void
 		{
-			super.showWindow ();
+			super.loadNextWindow();
 			
 			_current.addEventListener (SequenceWindowLoaderEvents.LOAD_WINDOW_BY_INDEX, parseWindow);
 		}

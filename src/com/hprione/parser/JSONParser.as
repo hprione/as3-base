@@ -1,7 +1,7 @@
 ﻿package com.hprione.parser 
 {
 	import com.adobe.serialization.json.JSON;
-	
+
 	/**
 	 * @author hprione
 	 * @since 15/11/2012
@@ -16,12 +16,12 @@
 		
 		override protected function deserialize(data:String):Object 
 		{
-			var json:JSON = JSON.decode(data);
+			var json:com.adobe.serialization.json.JSON = com.adobe.serialization.json.JSON.decode(data);
 			
 			return deserializeJSON(json);
 		}
 		
-		protected function deserializeJSON(json:JSON):Object
+		protected function deserializeJSON(json:com.adobe.serialization.json.JSON):Object
 		{
 			return null;
 		}
