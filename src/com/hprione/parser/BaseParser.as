@@ -11,7 +11,6 @@
 	 * @author hprione
 	 * @since 27/05/2013
 	 */
-	[Event(name = "onComplete", type = "com.hprione.parser.JSONEvents")]
 	[Event(name = "ioError", type = "flash.events.IOErrorEvent")]
 	[Event(name = "onData", type = "com.hprione.parser.ParserEvents")]
 	public class BaseParser extends EventDispatcher
@@ -32,7 +31,7 @@
 		
 		public function load():void
 		{
-			form.load();
+			form.send();
 		}
 		
 		public function unload():void

@@ -35,7 +35,7 @@ package com.hprione.net
 			request.data[parameter] = value;
 		}
 		
-		public function load():void
+		public function send():void
 		{
 			loader = new URLLoader();
 			loader.addEventListener(Event.COMPLETE, onLoaderCompleteEventHandler);

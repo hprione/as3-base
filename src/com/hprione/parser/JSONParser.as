@@ -4,6 +4,7 @@
 
 	/**
 	 * @author hprione
+	 * 
 	 * @since 15/11/2012
 	 */
 	public class JSONParser extends BaseParser
@@ -16,12 +17,10 @@
 		
 		override protected function deserialize(data:String):Object 
 		{
-			var json:com.adobe.serialization.json.JSON = com.adobe.serialization.json.JSON.decode(data);
-			
-			return deserializeJSON(json);
+			return deserializeJson(com.adobe.serialization.json.JSON.decode(data));
 		}
 		
-		protected function deserializeJSON(json:com.adobe.serialization.json.JSON):Object
+		protected function deserializeJson(data:Object):Object
 		{
 			return null;
 		}

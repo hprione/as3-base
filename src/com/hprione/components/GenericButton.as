@@ -4,15 +4,15 @@
 	import flash.events.MouseEvent;
 	
 	/**
-	 * Button
+	 * GenericButton
 	 * 
 	 * @author Hugo Prione
 	 * @since 18/03/2011
 	 */
-	public class Button extends DisplayComponent
+	public class GenericButton extends DisplayComponent
 	{
 		
-		public function Button():void
+		public function GenericButton():void
 		{
 			super();
 			

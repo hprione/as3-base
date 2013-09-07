@@ -2,6 +2,7 @@
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="com.hprione.utils.Size"/>
+    <classEntry path="com.hprione.components.FormField"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests/>
