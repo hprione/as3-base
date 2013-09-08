@@ -1,5 +1,6 @@
-package com.hprione.components
+package com.hprione.form
 {
+	import com.hprione.form.validation.GenericFormFieldValidator;
 	import com.hprione.string.Validate;
 	
 	import flash.events.FocusEvent;
@@ -11,6 +12,7 @@ package com.hprione.components
 		public var placeholder:String;
 		public var defaultTextFormat:TextFormat;
 		public var parameter:String;
+		public var validator:GenericFormFieldValidator;
 		
 		private var _field:TextField;
 		
@@ -47,6 +49,11 @@ package com.hprione.components
 				_field.removeEventListener(FocusEvent.FOCUS_OUT, onFieldFocusOutEventHandler);
 				_field = null;
 			}
+		}
+		
+		public function validate():Boolean
+		{
+			return validator.validate(value);
 		}
 		
 		private function onFieldFocusOutEventHandler(event:FocusEvent):void

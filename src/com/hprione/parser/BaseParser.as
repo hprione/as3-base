@@ -1,6 +1,6 @@
 ﻿package com.hprione.parser
 {
-	import com.hprione.net.Form;
+	import com.hprione.form.Form;
 	import com.hprione.parser.ParserEvents;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
