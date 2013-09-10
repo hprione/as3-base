@@ -1,8 +1,8 @@
 ﻿package com.hprione.factory
 {
 	import flash.events.ContextMenuEvent;
-	import flash.net.navigateToURL;
 	import flash.net.URLRequest;
+	import flash.net.navigateToURL;
 	import flash.ui.ContextMenu;
 	import flash.ui.ContextMenuItem;
 	
@@ -33,7 +33,7 @@
 			contextMenu.customItems.push(new ContextMenuItem("developed by:", false, false));
 			contextMenu.customItems.push(link);
 			contextMenu.customItems.push(email);
-			contextMenu.customItems.push(new ContextMenuItem("+55 34 9174 0652", false, false));
+			contextMenu.customItems.push(new ContextMenuItem("+55 34 9174 0658", false, false));
 			
 			return contextMenu;
 		}
