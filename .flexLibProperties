@@ -2,7 +2,7 @@
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
   <includeClasses>
     <classEntry path="com.hprione.utils.Size"/>
-    <classEntry path="com.hprione.form.FormField"/>
+    <classEntry path="com.hprione.form.GenericFormField"/>
     <classEntry path="com.hprione.form.validation.GenericFormFieldValidator"/>
     <classEntry path="com.hprione.form.validation.StringValidator"/>
     <classEntry path="com.hprione.form.validation.EmailValidator"/>

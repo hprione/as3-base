@@ -4,7 +4,7 @@ package com.hprione.form.validation
 	
 	public class StringValidator extends GenericFormFieldValidator
 	{
-		public function StringValidator(message:String)
+		public function StringValidator(message:String = null)
 		{
 			super(message || "This field can't be blank");
 		}

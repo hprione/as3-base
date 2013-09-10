@@ -7,19 +7,18 @@ package com.hprione.form
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	
-	public class FormField
+	public class GenericFormField
 	{
 		public var placeholder:String;
 		public var defaultTextFormat:TextFormat;
-		public var parameter:String;
 		public var validator:GenericFormFieldValidator;
 		
 		private var _field:TextField;
 		
-		public function FormField(field:TextField, defaultTextFormat:TextFormat, parameter:String)
+		public function GenericFormField(field:TextField, defaultTextFormat:TextFormat, validator:GenericFormFieldValidator = null)
 		{
 			this.defaultTextFormat = defaultTextFormat;
-			this.parameter = parameter;
+			this.validator = validator;
 			this.field = field;
 		}
 		

@@ -4,7 +4,7 @@ package com.hprione.form.validation
 	
 	public class EmailValidator extends GenericFormFieldValidator
 	{
-		public function EmailValidator(message:String)
+		public function EmailValidator(message:String = null)
 		{
 			super(message || "This field it's not a valid email");
 		}

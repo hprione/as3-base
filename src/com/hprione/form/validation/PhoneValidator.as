@@ -4,7 +4,7 @@ package com.hprione.form.validation
 	
 	public class PhoneValidator extends GenericFormFieldValidator
 	{
-		public function PhoneValidator(message:String)
+		public function PhoneValidator(message:String = null)
 		{
 			super(message || "This field it's not a valid phone");
 		}
