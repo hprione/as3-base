@@ -14,33 +14,31 @@ package com.hprione.string
 	{
 		private var obj:TextField;
 		private var mascara:String;
-		private var charMap:Object = {	num:"[0-9]",
-										char:"[A-Za-z]",
-										all:"[A-Za-z0-9]"};
+		private var charMap:Object = { num:"[0-9]", char:"[A-Za-z]", all:"[A-Za-z0-9]" };
 		
-		public function Mask (_obj:TextField, _mascara:String = "")
+		public function Mask(obj:TextField, mascara:String = "")
 		{
-			this.obj = _obj;
-			this.obj.addEventListener (TextEvent.TEXT_INPUT, this.tecla);
-			this.mascara = _mascara;
+			this.obj = obj;
+			this.obj.addEventListener(TextEvent.TEXT_INPUT, this.tecla);
+			this.mascara = mascara;
 		}
 		
-		public function unload ():void
+		public function unload():void
 		{
-			obj.removeEventListener (TextEvent.TEXT_INPUT, this.tecla);
+			obj.removeEventListener(TextEvent.TEXT_INPUT, this.tecla);
 			obj = null;
 		}
 		
-		private function setCaretPosition (pos:int):void
+		private function setCaretPosition(pos:int):void
 		{
-			this.obj.setSelection (pos, pos);
+			this.obj.setSelection(pos, pos);
 		}
 		
-		private function tecla (ev:TextEvent):void
+		private function tecla(ev:TextEvent):void
 		{
-			var key:uint = ev.text.charCodeAt (0);
+			var key:uint = ev.text.charCodeAt(0);
 			var char:String = ev.text;
-			var texto:Array = new Array (this.mascara.length);
+			var texto:Array = new Array(this.mascara.length);
 			var pos:int = this.obj.selectionBeginIndex;
 			var igual:Object = null;
 			var reChar:RegExp;
@@ -51,7 +49,7 @@ package com.hprione.string
 				else texto[i] = this.obj.text.charAt(i);
 			}
 			
-			if (key >= 48 && key <= 122)
+			if(key >= 48 && key <= 122)
 			{//typeable characters
 				while(pos < this.mascara.length)
 				{
@@ -94,7 +92,7 @@ package com.hprione.string
 				setCaretPosition(pos);
 				ev.preventDefault();
 			}
-			else ev.preventDefault ();
+			else ev.preventDefault();
 		}
 	}
 }
